@@ -1,0 +1,7 @@
+%p
+	- @schools.each do |school|
+		%h2
+			= school.name
+		- school.faculties.each do |fac|
+			= fac.first_name
+			= fac.last_name

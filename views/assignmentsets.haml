@@ -1,0 +1,30 @@
+%div.page#assignmentsets
+	%div.subheader
+		%h2 Assignment Sets
+	%div.row		
+		%div.id.set_header ID
+		%div.state.set_header State
+		%div.start_date.set_header Start Date
+		%div.end_date.set_header End Date
+		%div.edit.set_header view
+	- @assignmentsets.each do |set|
+		%div.row
+			%div.id
+				= set.id
+			%div.state
+				= set.state
+			%div.start_date
+				= set.start_date.strftime("%m/%d/%Y %I:%M%p")
+			%div.end_date
+				- if set.end_date.nil?
+					current
+				- else
+					= set.end_date.strftime("%m/%d/%Y %I:%M%p")
+			%div.edit
+				- if set.state == "working"
+					%a{:href=>"/assignmentset?id="+set.id.to_s} edit
+				- else				
+					%a{:href=>"/assignmentset?id="+set.id.to_s} view
+
+%div#new_set
+	%a.new_set{:href=>"/newset"} Start a new set from current Banner data

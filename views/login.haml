@@ -1,0 +1,20 @@
+%p
+	Welcome to the 2011 Student Government Association ballot. To vote, log in below.
+	%form#changeform{:action => "login", :method => "post"}
+	- if @error
+	%h2.error= @error
+
+%div.input	
+	%label{:for => "username"}
+		GGC username
+	%span.tip "jdoe", for example.
+	%input#username{:type => "text", :name => "username"}
+
+%div.input
+	%label{:for => "password"}
+		Password
+	%span.tip
+		The same password as my.GGC and GGC email
+	%input#password{:type => "password", :name => "password"}
+
+%input.submit{:type => "submit", :value => "Submit"}

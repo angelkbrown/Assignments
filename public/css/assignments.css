@@ -1,0 +1,152 @@
+/*******Eric Meyer's reset http://meyerweb.com/eric/tools/css/reset *********/
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {line-height: 1;background-color: #F6F4EA;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+/*******end reset*********/
+/*******login*********/
+#login_wrapper{padding: 40px;border:1px solid #E2DDB5;width:650px;margin:0 auto;}
+#login_wrapper h2 {line-height: 1.2;}
+#login_wrapper p {margin-top: 10px;}
+#login_form {margin:40px;}
+#login_form label {width: 90px;float:left;}
+#login_form div {margin-top: 5px;}
+#login_form .submit{margin-left: 160px;margin-top: 10px;}
+/*******end login*********/
+body{color:#555;margin: 10px;font-family: helvetica,sans-serif;font-size:16px;}
+body ul{clear:both;}
+#hd{margin-bottom: 10px}
+body h1{font-size: 30px;float:left;line-height: 1;}
+body h2{font-size: 26px;}
+body h3{font-size: 18px;}
+body h4{font-size: 16px;color:#777;}
+body h5{font-size: 14px;color:#777;}
+body{color:#555;margin: 10px;font-family: helvetica,sans-serif;font-size:16px;}
+#wrapper{margin: 0 auto;width:960px;padding-top: 20px;}
+#brought_by{font-family: Georgia;serif;float: right;font-weight: bold;font-size: 13px;font-style: italic;margin-top: 15px;}
+body li {margin-left:40px;}
+.data_item{float: left;width: 100px;}
+.results_row{clear:both;}
+.school, #assignmentsets {padding: 20px 0px;clear:both;}
+.needs_assn, .exceptions {padding: 20px 0;}
+.school_header, .subheader{background-color:#BED4C8;height: 27px;padding:5px 5px 0;}
+.page{clear:both;}
+#summary{
+	clear:both;
+	background-color: #fff;
+	border: 1px solid #E2DDB5;
+	padding:10px;
+	height:90px;
+}
+#summary h2{line-height: 1.5;}
+#summary div{
+	float: left;
+	width:340px;
+	height: 20px;
+	margin: 0 20px;
+}
+#summary label{
+	font-weight: bold;
+	float: left;
+}
+#summary span{float: right;}
+.fac_li {
+    border-bottom: 1px solid #E2DDB5;
+    border-top: 1px solid #FFFFFF;
+    clear: both;
+    min-height: 80px;
+    padding: 5px 0;
+}
+.current:hover, .suggested:hover {
+	background-color: #ffffff;
+	border: solid 1px 0 #b0e0e6;
+	cursor:pointer;
+}
+.res_li {
+	min-height: 20px;
+	clear:both;
+}
+.title div, .men_li div, .sug_li div, .maj_li div, .maj_li_title div{
+	float: left;
+	width:190px;
+}
+.maj_li .major{width:300px !important;}
+.school_fac_count, .school_mentee_count{width:190px;float:left;padding-bottom:5px;}
+.needs_assignment{clear:both;}
+.majors, .faculty {display:none;}
+.list_header:hover, .needs_assignment:hover{	
+	background-color: #ffffff;
+	border: solid 1px 0 #b0e0e6;
+	cursor:pointer;
+}
+.arrow{float:left;margin-right:5px;}
+.down, .csv, .fac_mentees, .fac_sug{display:none;}
+.suggested, .current{clear:both;margin-left:15px;}
+
+/**************Assignment Sets******************/
+.set_header{
+	font-weight:bold;
+	font-size:16px;
+	padding-top:5px;
+	border-bottom: 1px solid #888 !important;
+	border-top: none !important;
+}
+.state, .start_date, .end_date, .edit{
+	width:222px;
+	padding-top:5px;
+	float:left;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;	
+	text-align: center;
+}
+.id{
+	width: 40px;
+	float: left;
+	padding-top: 5px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;		
+}
+.row{
+	clear:left;
+	margin-left: 15px;
+}
+#new_set{
+	margin-top:20px;
+	height: 20px;
+	clear:both;
+}
+#assignmentsets{margin-bottom:20px;}
+/**************End Assignment Sets******************/
+
+/**************Faculty Assignments******************/
+.row{clear:both;}
+.resultsbox{clear:both;margin-left:15px;}
+.student{margin-left:15px;}
+/**************End Faculty Assignments******************/

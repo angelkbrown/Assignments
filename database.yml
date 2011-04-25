@@ -1,0 +1,16 @@
+mysql:
+  adapter: mysql
+  encoding: utf8
+  database: assignments
+  username: assignments_user
+  password: 3dt3chp455
+  host: localhost
+  reconnect: true
+
+oracle:
+  adapter: oracle_enhanced
+  username: profile_stage
+  password: Beq7thub
+  database: dev02.ggc.usg.edu
+  port: 1521
+  host: bilbo.ggc.usg.edu

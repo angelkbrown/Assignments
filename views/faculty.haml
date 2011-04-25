@@ -1,0 +1,43 @@
+%div.page
+	%div#summary
+		%h2
+			= @faculty.first_name 
+			= @faculty.last_name
+		%div 
+			%label Mentoring Discipline
+			%span 
+				= @faculty.faculty.school.name
+		%div
+			%label Full-time
+			%span yes				
+		%div 
+			%label Secondary Mentoring Discipline
+			%span None						
+		%div
+			%label Current Mentoring load
+			%span 21 
+		
+	%div.subheader
+		%h2 Assignment History
+	%div.row	
+		%div.id
+			Id
+		%div.start_date
+			Start Date
+		%div.end_date
+			End Date
+	- @assignmentsets.each do |set|
+		%div.row{:onclick=>"showAssignments();"}
+			%div.id
+				= set.id
+			%div.start_date
+				= set.start_date.strftime("%m/%d/%Y %I:%M%p")
+			%div.end_date
+				- if set.end_date.nil?
+					current
+				- else
+					= set.end_date.strftime("%m/%d/%Y %I:%M%p")
+			%div.resultsbox{:id=>"box_"+set.id.to_s}
+				Mentees:
+				%div.student{:id=>"results_"+set.id.to_s}
+												

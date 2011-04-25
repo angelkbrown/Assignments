@@ -1,0 +1,76 @@
+%div#summary
+	%h2 Summary of Results
+	%div
+		%label Total # of mentees:
+		%span 6510
+	%div
+		%label Total # of faculty:
+		%span 206		
+	%div
+		%label New assignments suggested:
+		%span 17	
+	%div
+		%label Suggested load per faculty:
+		%span about 32
+%div
+	- @assignmentset.each do |set|
+		- @assignments
+		- @nonfac = set.assignments.select{|a| a.faculty.faculty.nil?}
+		- if @nonfac.nil?
+			no nonfaculty assignments
+		- else
+			%div
+				nonfaculty assignments exist		
+			- @nonfac.each do |nonfac|
+				%div
+					= nonfac.faculty.first_name
+					= nonfac.faculty.last_name
+					= nonfac.student.first_name				
+					= nonfac.student.last_name								
+		
+		- @noschool = set.assignments.select{|a| !a.faculty.faculty.nil? && a.faculty.faculty.school.nil?}
+		- if @noschool.length==0
+			%div
+				no faculty with no school
+		- else
+			faculty with assignments but no school:
+			- @noschool.each do |noschoolfac|
+				%div
+					= noschoolfac.faculty.first_name
+					= noschoolfac.faculty.last_name					
+					= noschoolfac.student.first_name					
+					= noschoolfac.student.last_name															
+
+		- @assignments = set.assignments.select{|a| !a.faculty.faculty.nil? && !a.faculty.faculty.school.nil?}
+		- @faculty_name = ""
+		- @school_name = ""
+		- @assignments.sort! do |a,b|
+			- (b.faculty.faculty.school_id <=> a.faculty.faculty.school_id).nonzero? || (a.faculty.last_name <=> b.faculty.last_name)
+		- @assignments.each do |assignment|
+			- if @school_name != assignment.faculty.faculty.school.name
+				- @school_name = assignment.faculty.faculty.school.name
+				%div.school
+					%div.school_header
+						%h2.school_name
+							= @school_name
+					%ul.faculty	
+			- if @faculty_name != assignment.faculty.first_name
+				- @faculty_name = assignment.faculty.first_name
+				%li.fac_li
+					%div
+						= assignment.faculty.first_name
+						= assignment.faculty.last_name
+						%div
+							%ul
+							- @fac_assignments = @assignments.select{|a| a.faculty == assignment.faculty}
+							- @fac_assignments.each do |assn|
+								%li		
+									= assn.student.first_name
+									= assn.student.last_name
+									= assn.student.banner_id
+										
+										
+										
+										
+%div#commit_set
+	%a.commit_set{:href=>"/commit"}	
